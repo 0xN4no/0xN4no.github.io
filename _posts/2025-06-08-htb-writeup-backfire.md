@@ -1,10 +1,13 @@
 ---
 layout: single
 title: Backfire - Hack The Box
+excerpt: "Backfire is a medium-difficulty box that starts with an exposed Havoc command and control server, where the attacker exploits Server Side Request Forgery to ultimately establish a communication stream to Havoc&amp;#039;s WebSocket API and inject malicious commands to get remote code execution in Havoc&amp;#039;s payload compile process. Once the attacker gains the initial foothold, another C&amp;amp;C is running locally named Hardhat. The Hardhat C&amp;amp;C is open source, so the attacker crafts a JWT token with the default hardcoded JWT secret key. The user account can execute iptables &amp;amp; iptables-save for privilege escalation, allowing the attacker to achieve arbitrary file write."
 date: 2025-06-08
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-backfire/Backfire.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
 categories:
   - hackthebox
   - infosec
@@ -12,8 +15,6 @@ tags:
   - hackthebox
   - linux
   - capabilities
-  - php
-
 ---
 
 ![](/assets/images/htb-writeup-backfire/Backfire.png)
