@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>0xNano — Pentester & Red Teamer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="0xNano (Nano) — Pentester & Red Team from Argentina. eJPT & PT1 certified. Links to Bugcrowd, HackerOne, TryHackMe, HTB, blog and cheatsheet." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="0xNano — Pentester & Red Teamer" />
+  <meta property="og:description" content="eJPT & PT1. Bugcrowd, HackerOne, TryHackMe, HTB." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Bootstrap 4.3.1 (CSS) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Font Awesome 5.x (icons) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Google Fonts: Quicksand -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600&display=swap" rel="stylesheet">
+  <!-- Your styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body { font-family: 'Quicksand', sans-serif; }
+    .card-lite { border: 1px solid #e9ecef; border-radius: .75rem; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+    #glitch .text { font-weight: 600; letter-spacing: .2px; }
+    .social-icons { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:20px; }
+    .social-logo { width:42px; height:42px; border-radius:50%; background:#fff; padding:6px; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:transform 0.2s ease; }
+    .social-logo:hover { transform:scale(1.1); }
+  </style>
+</head>
+<body>
+  <header class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="mb-0">
+            You're on: <b>home</b>
+            <span class="float-right">
+              <a href="" target="_blank" rel="noopener noreferrer">CheatSheet</a> |
+              <a href="https://blog.0xnano.com/" target="_blank" rel="noopener noreferrer">Hacking Blog</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="inner card-lite p-4">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="title">
+            <div id="glitch">
+              <div class="text">Nano / @0xN4no</div>
+              <span id="cursor"></span>
+            </div>
+          </h2>
+          <div class="title_border"></div>
+
+          <h4>About me</h4>
+          <p>
+            I'm a 23-year-old pentester & red teamer from Argentina, holding eJPT and PT1 certifications. Passionate about web & AD exploitation, OSINT, and high-signal writeups.
+            For inquiries: <a href="mailto:0xNano@wearehackerone.com">0xNano@wearehackerone.com</a>.
+          </p>
+
+          <div class="text-center mt-4">
+            <p class="mb-1"><strong>Hack The Box badge</strong></p>
+            <a href="https://www.hackthebox.com/profile/54373" target="_blank" rel="noopener noreferrer">
+              <img src="https://www.hackthebox.eu/badge/image/54373" alt="HTB badge for 0xN4no" loading="lazy" height="46">
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row mt3">
+        <div class="col text-center social-icons">
+          <a href="https://twitter.com/0xN4no" target="_blank" rel="noopener noreferrer">
+            <img src="img/twitter.png" alt="Twitter/X" class="social-logo">
+          </a>
+          <a href="mailto:0xNano@wearehackerone.com" target="_blank" rel="noopener noreferrer">
+            <img src="img/mail.png" alt="Mail" class="social-logo">
+          </a>
+          <a href="https://bugcrowd.com/0xN4no" target="_blank" rel="noopener noreferrer">
+            <img src="img/bugcrowd.png" alt="Bugcrowd" class="social-logo">
+          </a>
+          <a href="https://hackerone.com/0xn4no" target="_blank" rel="noopener noreferrer">
+            <img src="img/hackerone.png" alt="HackerOne" class="social-logo">
+          </a>
+          <a href="https://tryhackme.com/p/0xN4no" target="_blank" rel="noopener noreferrer">
+            <img src="img/tryhackme.png" alt="TryHackMe" class="social-logo">
+          </a>
+          <a href="https://www.hackthebox.com/profile/54373" target="_blank" rel="noopener noreferrer">
+            <img src="img/hackthebox.png" alt="HackTheBox" class="social-logo">
+          </a>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3">
+    Made with <i class="fas fa-heart" aria-hidden="true"></i> by myself.
+  </footer>
+
+  <!-- Text Scramble -->
+  <script>
+    class TextScramble { constructor(el){ this.el=el; this.chars='!<>-_\\/[]{}—=+*^?#'; this.update=this.update.bind(this);} setText(newText){ const oldText=this.el.textContent; const length=Math.max(oldText.length,newText.length); const promise=new Promise((resolve)=>this.resolve=resolve); this.queue=[]; for(let i=0;i<length;i++){ const from=oldText[i]||''; const to=newText[i]||''; const start=Math.floor(Math.random()*40); const end=start+Math.floor(Math.random()*40); this.queue.push({from,to,start,end}); } cancelAnimationFrame(this.frameRequest); this.frame=0; this.update(); return promise;} update(){ let output=''; let complete=0; for(let i=0,n=this.queue.length;i<n;i++){ let {from,to,start,end,char}=this.queue[i]; if(this.frame>=end){ complete++; output+=to; } else if(this.frame>=start){ if(!char||Math.random()<0.28){ char=this.randomChar(); this.queue[i].char=char; } output+=`<span class=\"dud\">${char}</span>`; } else { output+=from; } } this.el.innerHTML=output; if(complete===this.queue.length){ this.resolve(); } else { this.frameRequest=requestAnimationFrame(this.update); this.frame++; } } randomChar(){ return this.chars[Math.floor(Math.random()*this.chars.length)]; } }
+    const phrases=[ 'Nano', 'X/Twitter: @0xN4no', 'Bugcrowd: 0xN4no', 'HackerOne: 0xN4no', 'TryHackMe: 0xN4no', 'HTB: 0xN4no' ];
+    const el=document.querySelector('#glitch .text');
+    const fx=new TextScramble(el);
+    let counter=0; (function next(){ fx.setText(phrases[counter]).then(()=>{ setTimeout(next, 1200); }); counter=(counter+1)%phrases.length; })();
+  </script>
+</body>
+</html>
