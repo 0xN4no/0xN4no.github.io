@@ -70,6 +70,9 @@ class TextScramble {
 
 const phrases = [
   'Nano',
+  '0xNano',
+  '0xN4no',
+  'BugCrowd: 0xNano',
   'X/Twitter: @0xN4no',
   'GitHub: @0xN4no',
   'HTB: @0xN4no',
@@ -90,24 +93,3 @@ next()
 
 
 }
-/*
-     FILE ARCHIVED ON 08:34:05 Mar 28, 2023 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 07:22:28 Aug 30, 2025.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.756
-  exclusion.robots: 0.032
-  exclusion.robots.policy: 0.018
-  esindex: 0.01
-  cdx.remote: 7.05
-  LoadShardBlock: 179.685 (3)
-  PetaboxLoader3.datanode: 330.115 (5)
-  load_resource: 312.449
-  PetaboxLoader3.resolve: 74.278
-  loaddict: 158.8
-*/
