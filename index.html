@@ -29,6 +29,38 @@
     .social-icons { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:20px; }
     .social-logo { width:42px; height:42px; border-radius:50%; background:#fff; padding:6px; object-fit:contain; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:transform 0.2s ease; }
     .social-logo:hover { transform:scale(1.1); }
+
+    /* =========================
+       DARK MODE (NON INVASIVE)
+       (No layout changes)
+    ========================= */
+    body.dark {
+      background: #0f1115 !important;
+      color: #e6e6e6;
+    }
+
+    body.dark header,
+    body.dark footer {
+      color: #9aa0a6;
+    }
+
+    body.dark .card-lite {
+      background: #161a22;
+      border-color: #2a2f3a;
+      box-shadow: 0 4px 20px rgba(0,0,0,.6);
+    }
+
+    body.dark a {
+      color: #6ab0ff;
+    }
+
+    body.dark .social-logo {
+      background: #161a22;
+    }
+
+    body.dark .title_border {
+      border-color: #2a2f3a;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +71,13 @@
           <p class="mb-0">
             You're on: <b>home</b>
             <span class="float-right">
+
+              <!-- Theme toggle button (does not affect layout) -->
+              <button id="themeToggle"
+                style="border:none;background:none;cursor:pointer;font-size:18px;margin-right:8px;padding:0;"
+                title="Toggle dark mode"
+                aria-label="Toggle dark mode">🌙</button>
+
               <a href="" target="_blank" rel="noopener noreferrer">CheatSheet</a> |
               <a href="https://blog.0xnano.com/" target="_blank" rel="noopener noreferrer">Hacking Blog</a>
             </span>
@@ -107,6 +146,25 @@
     Made with <i class="fas fa-heart" aria-hidden="true"></i> by myself.
   </footer>
 
+  <!-- Theme Toggle (Persisted) -->
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const dark = body.classList.contains('dark');
+      toggle.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    });
+  </script>
+
   <!-- Text Scramble -->
   <script>
     class TextScramble { constructor(el){ this.el=el; this.chars='!<>-_\\/[]{}—=+*^?#'; this.update=this.update.bind(this);} setText(newText){ const oldText=this.el.textContent; const length=Math.max(oldText.length,newText.length); const promise=new Promise((resolve)=>this.resolve=resolve); this.queue=[]; for(let i=0;i<length;i++){ const from=oldText[i]||''; const to=newText[i]||''; const start=Math.floor(Math.random()*40); const end=start+Math.floor(Math.random()*40); this.queue.push({from,to,start,end}); } cancelAnimationFrame(this.frameRequest); this.frame=0; this.update(); return promise;} update(){ let output=''; let complete=0; for(let i=0,n=this.queue.length;i<n;i++){ let {from,to,start,end,char}=this.queue[i]; if(this.frame>=end){ complete++; output+=to; } else if(this.frame>=start){ if(!char||Math.random()<0.28){ char=this.randomChar(); this.queue[i].char=char; } output+=`<span class=\"dud\">${char}</span>`; } else { output+=from; } } this.el.innerHTML=output; if(complete===this.queue.length){ this.resolve(); } else { this.frameRequest=requestAnimationFrame(this.update); this.frame++; } } randomChar(){ return this.chars[Math.floor(Math.random()*this.chars.length)]; } }
@@ -117,3 +175,4 @@
   </script>
 </body>
 </html>
+mk
