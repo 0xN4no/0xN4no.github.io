@@ -4,6 +4,9 @@ body {
     text-decoration: none;
 }
 
+/* ======================
+   TITULOS
+====================== */
 .title {
     text-align: center;
 }
@@ -11,12 +14,14 @@ body {
 .title_border {
     height: 2px;
     width: 100px;
-    margin: 0px auto;
+    margin: 0 auto;
     background-color: grey;
     margin-bottom: 37px;
-    margin-top: 6px auto 37px;
 }
 
+/* ======================
+   CONTENEDOR PRINCIPAL
+====================== */
 .inner {
     background-color: white;
     padding: 22px;
@@ -24,23 +29,17 @@ body {
     overflow: auto;
 }
 
-.mt3 {
-    margin-top: 3em;
-}
+/* ======================
+   ESPACIADOS
+====================== */
+.mt3 { margin-top: 3em; }
+.mt1 { margin-top: 1em; }
+.center { text-align: center; }
 
-.mt1 {
-    margin-top: 1em;
-}
-
-.fab {
-    padding: 7px;
-    min-width: 33px;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-}
-
+/* ======================
+   ICONOS (fontawesome)
+====================== */
+.fab,
 .fa {
     padding: 7px;
     min-width: 33px;
@@ -50,11 +49,6 @@ body {
     margin: 5px 2px;
 }
 
-.center {
-    text-align: center;
-}
-
-/* Redes sociales */
 .fa-instagram,
 .fa-linkedin,
 .fa-envelope,
@@ -66,13 +60,9 @@ body {
     color: white !important;
 }
 
-.cus-icon {
-    border-bottom: 1px solid grey;
-}
-.cus-icon:hover {
-    border-bottom: 1px solid white;
-}
-
+/* ======================
+   HEADER / FOOTER
+====================== */
 header {
     background: white;
     padding: 12px;
@@ -89,96 +79,108 @@ footer {
     overflow: hidden;
 }
 
-.cusicon {
-    background-color: grey;
-    padding: 7px;
-    min-width: 32px;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    padding-top: 4px;
-    padding-bottom: 5px;
-}
-.cusicon img {
-    height: 19px;
-    vertical-align: -3px;
+/* ======================
+   ICONOS PNG
+====================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-/* Responsivo */
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 21px;
-  }
-  .title_border {
-    height: 2px;
-    width: 53px;
-    margin: 0px auto;
-    background-color: grey;
-    margin-bottom: 20px;
-  }
-  p {
-    font-size: 15px;
-  }
+.social-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 6px;
+    object-fit: contain;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
 }
-@media (min-width: 576px) {
-  .container { max-width: 460px; }
+
+.social-logo:hover {
+    transform: scale(1.1);
 }
-@media (min-width: 768px) {
-  .container { max-width: 460px; }
-}
-@media (min-width: 992px) {
-  .container { max-width: 460px; }
-}
-@media (min-width: 1200px) {
-  .container { max-width: 460px; }
-}
+
+/* ======================
+   RESPONSIVE (CLAVE)
+====================== */
+@media (min-width: 576px) { .container { max-width: 460px; } }
+@media (min-width: 768px) { .container { max-width: 460px; } }
+@media (min-width: 992px) { .container { max-width: 460px; } }
+@media (min-width: 1200px){ .container { max-width: 460px; } }
+
 @media (max-width: 576px) {
-  .container { max-width: 460px !important; }
+    .container { max-width: 460px !important; }
 }
 @media (max-width: 460px) {
-  .container { max-width: 100% !important; }
+    .container { max-width: 100% !important; }
 }
 
-/* --- FIX tachado del título/glitch --- */
+/* ======================
+   FIX GLITCH / LINKS
+====================== */
 #glitch,
 #glitch .text,
 #glitch .dud,
 h2.title,
 h2.title * {
-  text-decoration: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-  background-image: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
 }
 
-/* Enlaces dentro del contenido principal */
 .inner a,
 .inner a:hover,
 .inner a:focus {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }
 
-/* Iconos personalizados (PNG) */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+/* =====================================================
+   DARK MODE (SOLO COLORES – NO TOCA LAYOUT)
+===================================================== */
+
+body.dark {
+    background-color: #0f1115 !important;
+    color: #e6e6e6;
 }
 
-.social-logo {
-  width: 48px;          /* ancho fijo */
-  height: 48px;         /* alto fijo */
-  border-radius: 50%;   /* los hace circulares */
-  background: #fff;     /* fondo blanco para consistencia */
-  padding: 6px;         /* margen interno */
-  object-fit: contain;  /* mantiene proporciones del logo */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
+body.dark header {
+    background: #161a22;
+    color: #9aa0a6;
 }
 
-.social-logo:hover {
-  transform: scale(1.1);
+body.dark footer {
+    color: #9aa0a6;
+}
+
+body.dark .inner {
+    background-color: #161a22;
+    border-top-color: #4da3ff;
+}
+
+body.dark .title_border {
+    background-color: #2a2f3a;
+}
+
+body.dark a {
+    color: #6ab0ff;
+}
+
+body.dark .social-logo {
+    background: #161a22;
+}
+
+/* Botón dark mode */
+#themeToggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin-right: 8px;
 }
