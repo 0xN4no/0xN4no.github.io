@@ -631,6 +631,37 @@
     @keyframes up { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
     .hero    { animation: up 0.55s ease both; }
     section  { animation: up 0.55s 0.08s ease both; }
+
+    .htb-links {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.htb-badge {
+  margin-top: 0;
+}
+
+.htb-separator {
+  width: 1px;
+  height: 24px;
+  background: var(--line2);
+}
+
+.htb-profile-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--cyan);
+  border-bottom: 1px solid rgba(59,215,255,0.35);
+  transition: 0.18s ease;
+}
+
+.htb-profile-link:hover {
+  color: var(--text);
+  border-bottom-color: var(--green);
+}
   </style>
 </head>
 <body>
@@ -802,9 +833,18 @@
         <div class="cert-chip"><img src="https://cdn.simpleicons.org/tryhackme/32f29a" alt="TryHackMe logo"> PT1</div>
         <div class="cert-chip upcoming"><img src="https://academy.hackthebox.com/storage/exam_badges/312krCbLBwwnMN1uaOXohoEjSE6Fb8ljaXi7B4zL.png" alt="Hack The Box logo"> CPTS &nbsp;</div>
       </div>
-      <a class="htb-badge" href="https://app.hackthebox.com/profile/54373" target="_blank" rel="noopener">
-        <img src="https://www.hackthebox.eu/badge/image/54373" alt="Hack The Box badge for 0xN4no" height="38" loading="lazy">
-      </a>
+      <div class="htb-links">
+  <a class="htb-badge" href="https://app.hackthebox.com/profile/54373" target="_blank" rel="noopener">
+    <img src="https://www.hackthebox.eu/badge/image/54373" alt="Hack The Box badge for 0xN4no" height="38" loading="lazy">
+  </a>
+
+  <span class="htb-separator"></span>
+
+  <a class="htb-profile-link" href="https://profile.hackthebox.com/profile/019c5868-c59f-7123-870e-812ab1c86154" target="_blank" rel="noopener">
+    View public HTB profile ↗
+  </a>
+  
+</div>
     </div>
   </section>
 
@@ -843,6 +883,7 @@
           </div>
           <div><div class="link-name">Hack The Box</div><div class="link-handle">0xN4no</div></div>
         </a>
+        
 
         <a class="link-card" href="https://bugcrowd.com/h/0xNano" target="_blank" rel="noopener">
           <div class="link-ico">
