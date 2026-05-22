@@ -107,17 +107,23 @@
       color: var(--text);
     }
 
-    .brand-mark {
+    .brand-avatar {
       width: 33px;
       height: 33px;
       border-radius: 9px;
-      display: grid;
-      place-items: center;
-      background: var(--green);
-      color: #04100a;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
+
+      object-fit: cover;
+
+      border: 1px solid var(--line2);
+
+      image-rendering: pixelated;
+
+      transition: 0.18s ease;
+    }
+
+    .brand-avatar:hover {
+      transform: scale(1.04);
+      border-color: rgba(50, 242, 154, 0.45);
     }
 
     .nav-links {
@@ -866,7 +872,7 @@
   <header>
     <nav class="wrap nav">
       <a class="brand" href="#top">
-        <span class="brand-mark">N</span>
+        <img class="brand-avatar" src="https://avatars.githubusercontent.com/u/116940461?v=4" alt="0xNano avatar">
         0xNano
       </a>
       <div class="nav-links">
